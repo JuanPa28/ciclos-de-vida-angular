@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { LifecycleDemoComponent } from './lifecycle-demo/lifecycle-demo.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, RouterModule, LifecycleDemoComponent], 
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'lifecycle-demo';
+  title = 'Lifecycle Demo';
+  showComponent = true;
+
+  alternarComponente() {
+    this.showComponent = !this.showComponent;
+  }
 }

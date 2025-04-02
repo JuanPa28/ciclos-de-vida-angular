@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Ciclo de Vida en Angular</h2>
+    <p>Propiedad actual: {{ data }}</p>
+  
+    <button (click)="changeData()" class="btn btn-success">Cambiar Propiedad</button>
+    <button (click)="destroyComponent()" class="btn btn-danger">Destruir Componente</button>
+  
+    <h3>Eventos del ciclo de vida:</h3>
+    <ul>
+      <li *ngFor="let msg of logMessages">{{ msg }}</li>
+    </ul>
+  </div>
+  
